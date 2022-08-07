@@ -155,9 +155,13 @@ const Header = () => {
           onClick={handleShowCart}
         >
           <BsBasket2Fill className="text-textColor text-2xl  cursor-pointer" />
-          <div className=" absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
-            <span className="text-xs text-white font-semibold">2</span>
-          </div>
+          {cartItems &&
+              cartItems.length > 0 &&
+                (
+                  <div className=" absolute -top-2 -right-2  w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+                    <span className="text-xs text-white font-semibold">{cartItems.length}</span>
+                  </div>
+                )}
         </div>
 
         <Link to={"/"} className="flex items-center gap-2">
